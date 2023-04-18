@@ -29,10 +29,17 @@ server.on('error', (error) => {
 
 
 //서버추가
-http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-  res.write('<h1>[8081] Hello Node!</h1>');
-  res.end('<p>Hello Server!</p>');
+const fs = require('fs').promises;
+http.createServer(async (req, res) => {
+  try {
+    const data = await fs.readFile('./Node http 서버/server2.html');
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(data);
+  } catch (err) {
+    console.error(err);
+    res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end(err.message);
+  }
 })
   .listen(8081, () => { // 서버 연결
     console.log('8081번 포트에서 서버 대기 중입니다!');
