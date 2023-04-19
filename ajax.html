@@ -25,6 +25,8 @@
     //전체적인 구조는 비슷하나 두번재 인수로 데이터를 넣어 보낸다.
     (async () => {
         try {
+            //FormData 객체
+            //HTML form 태그에 담긴 데이터를 AJAX 요청으로 보내고 싶은 경우 이용
             const formData = new FormData();
             formData.append('name', 'zerocho');
             formData.append('birth', 1994);
@@ -36,5 +38,15 @@
             console.error(error);
         }
     })();
+    
+
+    //FormData 메서드
+    // Append로 데이터를 하나씩 추가
+    // Has로 데이터 존재 여부 확인
+    // Get으로 데이터 조회
+    // getAll로 데이터 모두 조회
+    // delete로 데이터 삭제
+    // set으로 데이터 수정
+
 
 </script>
