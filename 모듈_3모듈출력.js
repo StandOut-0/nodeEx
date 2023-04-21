@@ -10,3 +10,10 @@ function checkStringOddOrEven(str) {
 
 console.log(checkNumber(10));
 console.log(checkStringOddOrEven('hello'));
+
+console.log("\n"+"require한 모듈에 대한 캐슁 정보");
+console.log(require.cache);
+
+//require.main는 node 실행한 첫 모듈을 가리킴.
+console.log("\n"+"require.main");
+console.log(require.main.filename);
